@@ -344,7 +344,6 @@ class My_backprojection:
                         elif temp <= -100:
                             temp = -100
                         f[sample_in_batch][input_neuron_index, output_neuron_index] = temp
-
         return f
 
     def get_activation_inverse(self, z, method):
@@ -411,18 +410,6 @@ class My_backprojection:
             f[f == -1 * np.inf] = -1 * cut_off
         return f
 
-
-
-
-
-
-
-
-
-
-
-
-
     def sigmoid(self, z):
         f = 1 / (1 + np.exp(-1 * z))
         return f
@@ -445,13 +432,6 @@ class My_backprojection:
         f[f == np.inf] = cut_off
         f[f == -1*np.inf] = -1*cut_off
         return f
-
-
-
-
-
-
-
 
     def save_variable(self, variable, name_of_variable, path_to_save='./'):
         # https://stackoverflow.com/questions/6568007/how-do-i-save-and-restore-multiple-variables-in-python
